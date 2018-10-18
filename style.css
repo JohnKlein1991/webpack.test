@@ -1,0 +1,15 @@
+body {
+  font-size: 20px;
+};
+
+.header {
+  color: red;
+}
+
+.main {
+  color: green;
+}
+
+.footer {
+  color: blue;
+}
