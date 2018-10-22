@@ -2,7 +2,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './main.js',
+  entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.js'
@@ -15,6 +15,11 @@ module.exports = {
             "style-loader",
             "css-loader"
           ]
+      },
+      {
+        test: /\.html$/,
+        include: path.resolve(__dirname, 'src/includes'),
+        use: ['raw-loader']
       }
     ]
   },
@@ -26,7 +31,7 @@ module.exports = {
       main: '<div class="main">MAIN information</div>',
       footer: '<p>Bottom of the page</p>',
       // Load a custom template (lodash by default see the FAQ for details)
-      template: 'index.html'
+      template: 'src/index.html'
     })
   ]
 };
